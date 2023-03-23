@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "du-wantlist-scrape"
+version = "0.1.0"
+description = ""
+authors = ["quojama <giantkoyama@gmail.com>"]
+license = "Mit"
+readme = "README.md"
+packages = [{include = "du_wantlist_scrape"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+selenium = "^4.8.2"
+chromedriver-binary = "^111.0.5563.64.0"
+python-dotenv = "^1.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
