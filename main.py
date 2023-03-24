@@ -4,14 +4,18 @@ import time
 import chromedriver_binary
 from dotenv import load_dotenv
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
 load_dotenv()
 
-driver = webdriver.Chrome('chromedriver.exe')
+option = Options()
+option.add_argument('--headless')
+
+driver = webdriver.Chrome('chromedriver.exe', options=option)
 
 driver.get('https://diskunion.net/ec/ct/mypage')
-time.sleep(2)
+time.sleep(3)
 mail = driver.find_element(By.NAME, 'email_address')
 password = driver.find_element(By.NAME, 'password')
 mail.send_keys(os.environ['MAIL'])
